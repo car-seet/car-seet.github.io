@@ -1,0 +1,499 @@
+/* Import Local Font ( Work Sans Bold ) */
+@font-face {
+    font-family: WorkSansBold ;
+    src: url(../fonts/WorkSansFont_wght.ttf)
+}
+/* Import Local Font ( Work Sans Italic ) */
+@font-face {
+    font-family: WorkSansItalic ;
+    src: url(../fonts/WorkSans-Italic-Font_wght.ttf)
+}
+@font-face {
+    font-family: TitleFont;
+    src: url(../fonts/Lobster-Regular.ttf);
+}
+@font-face {
+    font-family: Title;
+    src: url(../fonts/Sriracha-Regular.ttf);
+}
+@font-face {
+    font-family: TitleFont;
+    src: url(../fonts/Lobster-Regular.ttf);
+}
+@font-face {
+    font-family: Aref;
+    src: url(../fonts/new/ArefRuqaa-Bold.ttf);
+}
+@font-face {
+    font-family: Cairo;
+    src: url(../fonts/new/CairoPlay-VariableFont_slnt\,wght.ttf);
+}
+@font-face {
+    font-family: Reem;
+    src: url(../fonts/new/ReemKufiFun-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Arabic;
+    src: url(../fonts/Cairo-VariableFont_slnt\,wght.ttf);
+}
+
+/* Call The Font to Make it Working on all elements, Using Box Sizzing and prefixes */
+html{
+    scroll-behavior: smooth;
+}
+*{
+    font-family: WorkSansBold;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+*::selection{
+    /* background-color: #b3bfe4; */
+    background-color: var(--main-color);
+    color: black;
+}
+
+/* Global Variables, Mostly Will Using it */
+:root{
+    --main-color:#01c38d;
+    --yellow-color:#fab005;
+    --secondary-color: #ecebeb;
+}
+/* End Global Variables  */
+
+/* Small Screen  */
+@media (min-width: 768px) {
+    .container{
+        width: 750px;
+    }
+}
+/* Medium Screen  */
+@media (min-width: 992px) {
+    .container{
+        width: 100%;
+    }
+}
+/* Large Screen  */
+@media (min-width: 1200px) {
+    .container{
+        width: 100%;
+    }
+}
+h1{
+    color: white;
+    margin: 0;
+    font-family: Title;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    transition: text-shadow .3s;
+    text-shadow: #fff700 0px 0px 11px;
+    font-size: 20px !important;
+}
+header{
+    padding: 0;
+}
+header section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    background-color: #6f6e4e;
+}
+/* Display Settings of Logo */
+header section .logo {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 50%;
+    transition: box-shadow .3s;
+    box-shadow: #fff700 0px 0px 2px 1px;
+}
+
+header section .links {
+    position: relative;
+    flex-wrap: wrap;
+    margin-right: 7px;
+    
+}
+/* To Make menu Icon (.icon = Parent span) */
+header section .links .icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+/* To change the menu bar to right row When You Hover of It */
+/* First Span Control of Settings */
+header section .links:hover .icon span:first-child{
+    transform: rotate(-45deg) translateX(-2px);
+    width: 50%;
+    background-color: #fff700;
+}
+/* Second span Control of Settings*/
+header section .links:hover .icon span:nth-child(2){ 
+    width: 70%; /*100*/
+    transform: translate(6px);
+    background-color: #fff700;
+}
+/* Last span Control of Settings*/
+header section .links:hover .icon span:last-child{
+    transform: rotate(45deg) translateX(-2px);
+    width: 50%;
+    background-color:#fff700;
+}
+/* To Control of 3 Spans */
+header section .links .icon span{
+    background-color: #f5f5f5;
+    margin-bottom: 5px;
+    height: 2px;
+}
+/* Controling of First Span in Icon Class */
+header section .links .icon span:first-child{
+    width: 100%;
+    transition: .3s;
+}
+/* Controling of Second Span in Icon Class */
+header section .links .icon span:nth-child(2){
+    width: 55%;
+    transition: .3s;
+}
+/* Controling of Last Span in Icon Class */
+header section .links .icon span:last-child{
+    width: 100%;
+    transition: .3s;
+}
+/* Settings of ul (unorderd list) in Links div */
+header section .links ul {
+    position: absolute;
+    font-family: Arabic;
+    list-style: none;
+    padding: 0;
+    margin: 0 1px 0 0;
+    background-color: #ecebeb;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    border-radius: 5px ;
+    display: none;
+    z-index: 1;
+}
+/* Settings To show ul in Links div When You Hover on it*/
+header section .links:hover ul {
+    display: block;
+}
+/* Settings of ul Before Element to make Arrow Up */
+header section .links ul::before {
+    content: '';
+    border-width: 12px;
+    border-style: solid;
+    border-color: transparent transparent #ecebeb transparent;
+    position: absolute;
+    top: -21px;
+    right: 0;
+}
+/* Settings of Links of bar in Header */
+header section .links ul li a {
+    display: block;
+    font-family: Arabic;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    transition: .3s;
+    display: flex;
+    justify-content: space-between;
+}
+/* Settings of Bar (a) Icons Items*/
+header section .links ul li a i {
+    opacity: .01111;
+    padding-right: 10px;
+    transition-duration: .3s;
+    display: inline;
+}
+/* Settings of Bar (a) Icons Items When you hover on it */
+header section .links ul li a:hover i {
+    color: var(--main-color);
+    opacity: 1;
+    padding-right: 0px;
+    display: inline;
+}
+/* Settings of Bar (a) Link Items When you hover on it */
+header section .links ul li a:hover{
+    padding-left: 27px;
+    color: var(--main-color);
+}
+/* Settings of Bar ul Items but Expect The last item  */
+header section .links ul li:not(:last-child) a {
+    border-bottom: 2px #d8d7d7 solid;
+}
+/* Settings of Landing Section to Put Height and Background Image */
+.landing{
+    /* background-image: url(../images/Car-Images/rangerover.jpg); */
+    background-image: url(../images/Car-Images/chrome-images/mainbackground.jpg);
+    background-size: contain;
+    max-width: 100% ;
+    height: calc(100vh - 235px);
+    margin: 0;
+    position: relative;
+}
+.landing a{
+    position: absolute;
+    font-weight: bold;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arabic;
+    text-decoration: none;
+    background-color: #01c38d;
+    border-radius: 20px;
+    color: white;
+    width: 85px;
+    text-align: center;
+    font-size: 20px;
+    padding: 7px 0px;
+}
+/* Settings of the div in Landing Section */
+
+
+
+/* The Div of Special Heading and Paragraph of Special Heading */
+
+/* Settings Of Designing h2 heading   */
+.special-heading{
+    color: #c1c8cf;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -3px;
+}
+/* Settings Of Designing Paragraph After h2 heading   */
+.special-heading + p {
+    text-align: center;
+    margin: 0;
+    margin-top: -11px;
+    font-size: 20px;
+    color: #333;
+    font-family: Arabic;
+    font-weight: 600;
+}
+/* Change Settings of Special heading On Phone and small screen To Be responsive Design*/
+@media (max-width: 767px) {
+    .special-heading{
+        font-size: 35px;
+    }
+    .special-heading + p {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+}
+/*<--------- Portfolio Start ------------>*/
+.portfolio{
+    padding: 15px 0;
+    background-color: #e0e0e0;
+}
+.portfolio .portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin: 40px 0 0 0;
+}
+@media (min-width: 1000px) {
+    .portfolio .portfolio-content{
+        grid-template-columns: repeat(auto-fill, minmax(250px, 32%));
+        justify-content: center;
+    }
+}
+.portfolio .portfolio-content .card{
+    font-family: Arabic;
+    background-color: white;
+    margin: 0 10px 15px 10px;
+    transition-duration: .3s;
+    border-radius: 10px;
+    border: 5px solid white;
+}
+.portfolio .portfolio-content .card:hover{
+    border: #10cab7 5px solid;
+    box-shadow: var(--main-color) 0px 0px 9px 2px;
+}
+.portfolio .portfolio-content .card img{
+    max-width: 100%;
+    border-radius:5px;
+}
+.portfolio .portfolio-content .card h3 {
+    margin: 0;
+    padding: 10px 0 0 10px;
+    font-weight: 800;
+    font-family: Arabic;
+}
+.portfolio .portfolio-content .card p{
+    margin: 0;
+    padding: 3px 0 10px 10px;
+    line-height: 1.5;
+    color: #333;
+    font-family: Arabic;
+    font-weight: 500;
+    }
+.portfolio .portfolio-content .card img{
+    max-width: 100%;
+}
+@media (max-width: 767px) {
+    .portfolio .portfolio-content .card {
+        text-align: center;
+    }
+    .portfolio .portfolio-content .card h3{
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    
+}
+/*<--------- Portfolio End ------------>*/
+/*<--------- About Start ------------>*/
+.about{
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.heading-ar {
+    font-family: Arabic;
+    font-size: 44px;
+}
+.heading-ar + p {
+    font-family: Arabic;
+}
+.about-content{
+    margin: 30px 15px 0px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+}
+.about .about-content .image{
+    position: relative;
+    width: 250px;
+    height: 375px;
+}
+.about .about-content .image img{
+    max-width: 100%;
+    border-radius: 20px;
+}
+
+@media (max-width: 991px) {
+    .about-content{
+        flex-direction: column;
+    }
+    .about .about-content .image {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .about-content{
+        margin: 30px 0px 0px 0px;
+    }
+    .about .about-content .image {
+        position: relative;
+        width: 250px;
+        height: 180px;
+        text-align: center;
+    }
+    .about .about-content .image img {
+        max-width: 100%;
+        border-radius: 20px;
+    }
+}
+.about .about-content .text{
+    flex-basis: calc(100% - 500px);
+    text-align: center;
+}
+.about .about-content .text p:first-of-type{
+    font-weight: bold;
+    line-height: 2;
+    font-family: Arabic;
+}
+.about .about-content .text hr{
+    border-color: var(--main-color);
+    width: 75%;
+}
+.about .about-content .text p:last-of-type{
+    font-weight: 400;
+    line-height: 1.7;
+    font-family: Arabic;
+}
+.about .about-content .text a{
+    font-weight: 400;
+    line-height: 1.7;
+    font-family: Arabic;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    color: #01c38d;
+}
+/*<--------- About End ------------>*/
+/*<--------- Contact Start ------------>*/
+.contact{
+    background-color: var(--secondary-color);
+    padding: 20px 0 10px 0 ;
+}
+.contact .info {
+    padding: 20px;
+    text-align: center;
+}
+.contact .info .p-label{
+    font-weight: 800;
+    color: #2c4755;
+    font-size: 35px;
+}
+.contact .info .break-line{
+    width: 50%;
+    border-color: var(--main-color);
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.contact .info .social p{
+    font-size: 25px;
+    font-weight: 400;
+    font-family: Arabic;
+}
+.contact .info .social a{
+    padding: 0 10px;
+    font-size: 30px;
+    color: #2c4755;
+    transition-duration: .3s;
+}
+.contact .info .social a:hover{
+    color: #0be2cd;
+    
+}
+.heading-arbic {
+    font-family: Arabic;
+}
+.heading-arbic a {
+    font-family: Arabic;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 17px;
+    color: #01c38d;
+}
+
+@media (max-width: 600px) {
+    .contact .info .social p {
+        font-size: 17px;
+        font-weight: 500;
+        font-family: Arabic;
+    }
+    .contact .info .social a {
+        font-size: 20px;
+        padding: 0 6px;
+    }
+}
+/*<--------- Contact End ------------>*/
+/*<--------- Footer Start ------------>*/
+.footer-div{
+    background-color: #2c4755;
+    padding: 15px 10px;
+    text-align: center;
+    color: white;
+}
+.footer-div span{
+    color: #0be2cd;
+    font-weight: bold;
+}
+/*<--------- Footer End ------------>*/
